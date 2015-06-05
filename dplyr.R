@@ -1,7 +1,7 @@
 # dplyr 2 #
 ###########
 
-setwd("/Users/Jack/Google Drive/Programming/R/dplyr")
+setwd("~/git/dplyr-fun")
 
 if(!require(dplyr))
     install.packages("dplyr")
@@ -201,11 +201,11 @@ ggplot(hflights,aes(x=Dest,stat='bin')) + geom_bar()
 # AIRPORT DATA #
 ################
 
-airports <- read.csv("./hflights/global_airports.csv")
+airports <- read.csv("./global_airports.csv")
 airports <- tbl_df(airports)
 
 # load airport data
-load("./hflights/WorkSpace.RData")
+load("./WorkSpace.RData")
 glimpse(hflights)
 
 x = "LHR"
@@ -272,5 +272,5 @@ ggplot(USA, aes(x=long,y=lat)) + geom_polygon(aes(group=group)) + theme_bw() +
     geom_point(data=hflights,aes(x=DestLong,y=DestLat,group=Dest),alpha=1/10) +
     geom_segment(data=hflights,aes(x=OriginLong, y=OriginLat, xend=DestLong, yend=DestLat),alpha=1/500)
 
-save.image("./hflights/WorkSpace.RData")
+save.image("./WorkSpace.RData")
 
